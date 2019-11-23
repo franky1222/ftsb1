@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='lib/assets/css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='lib/assets/css/index.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='lib/layui/dist/css/layui.css')  }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='lib/css/loaders.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='lib/css/lanrenzhijia.css')  }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='lib/css/AlipayLiuCheng.css')  }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+</head>
+<body>
+<div class="main clearfix">
+
+    <div class="grid-780 grid-780-pd fn-hidden fn-clear">
+        <div class="navi-container">
+            <ol class="ui-step    ui-step-4 ">
+                <li id="li1" class="ui-step-start ui-step-active">
+                    <div class="ui-step-line">-</div>
+                    <div class="ui-step-icon">
+                        <i id="li1-t" class="iconfont">y</i>
+                        <i class="ui-step-number">1</i>
+                        <span class="ui-step-text">上传图片</span>
+                    </div>
+                </li>
+
+                <li id="li2" style="color: #f16f20">
+                    <div class="ui-step-line">-</div>
+                    <div class="ui-step-icon">
+                        <i id="li2-t" style="color:#f16f20 " class="iconfont ui-step-active">y</i>
+                        <i class="ui-step-number">2</i>
+                        <span class="ui-step-text">定位&调整</span>
+                    </div>
+                </li>
+
+                <li id="li3">
+                    <div class="ui-step-line">-</div>
+                    <div class="ui-step-icon">
+                        <i id="li3-t" class="iconfont">y</i>
+                        <i class="ui-step-number">3</i>
+                        <span class="ui-step-text">识别&改错</span>
+                    </div>
+                </li>
+                <li id="li4" class="ui-step-end">
+                    <!-- <div class="ui-step-line">-</div>     -->
+                    <div class="ui-step-icon">
+                        <i id="li4-t" class="iconfont">y</i>
+                        <i class="iconfont ui-step-number"></i>
+                        <span class="ui-step-text">下载</span>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </div>
+	<div class="process">
+		<p id="demo">正在显示第i张图片，共8张</p>
+	</div>
+    <div class="grid-780 grid-780-pd fn-hidden fn-clear" id="li_pn" style="display: none">
+        <div class="navi-container">
+            <ol class="ui-step    ui-step-4 ">
+                <li id="li5" class="ui-step-start ui-step-active">
+                    <div class="ui-step-line">-</div>
+                    <div class="ui-step-icon">
+                        <i id="li5-t" class="iconfont">y</i>
+                        <i class="ui-step-number">A</i>
+                        <span class="ui-step-text">左上</span>
+                    </div>
+                </li>
+
+                <li id="li6" >
+                    <div class="ui-step-line">-</div>
+                    <div class="ui-step-icon">
+                        <i id="li6-t"class="iconfont">y</i>
+                        <i class="ui-step-number">B</i>
+                        <span class="ui-step-text">右上</span>
+                    </div>
+                </li>
+
+                <li id="li7">
+                    <div class="ui-step-line">-</div>
+                    <div class="ui-step-icon">
+                        <i id="li7-t" class="iconfont">y</i>
+                        <i class="ui-step-number">C</i>
+                        <span class="ui-step-text">左下</span>
+                    </div>
+                </li>
+                <li id="li8" class="ui-step-end">
+                    <!--<div class="ui-step-line">-</div>-->
+                    <div class="ui-step-icon">
+                        <i id="li8-t" class="iconfont">y</i>
+                        <i class="ui-step-number">D</i>
+                        <span class="ui-step-text">右下</span>
+                    </div>
+                </li>
+            </ol>
+        </div>
+
+    </div>
+    <input type="hidden" value="{{ var1 }}" id="data1"/>
+    <input type="hidden" value="{{ var2 }}" id="data2"/>
+    <input type="hidden" value="{{ var3 }}" id="data3"/>
+	<input type="hidden" value="{{ var4 }}" id="data4"/>
+    <input type="hidden" value="{{ UserName }}" id="dataUserName"/>
+    <!--获取后端随机生成的图片名字-->
+
+
+    <form name="fm" method="post" action="/blog/update">
+        <input type="hidden" value="{{ photoname }}" id="ChangePhotoName" name="photoname"/>
+        <input type="hidden" value="sswerweew" id="ss" name="ss"/>
+        <input type="hidden" value="sswerweew" id="xli" name="xli"/>
+        <input type="hidden" value="sswerweew" id="yli" name="yli"/>
+    </form>
+
+    <div class="col-xs-6 maxHeight" style="background-color: #f2f7f2">
+        <div class="center_img_div">
+
+            <div class="center_img">
+                <img src="" draggable="false" class="c_img" id="topImg" rotate="0">
+                <div class="biaoDiv"></div>
+            </div>
+            <div class="col-xs-12" id="saveBtn">
+                <div style="float: right;margin-right: 10px;">
+                    <div class="btn_base" onclick="save()" style="width: 100px;height: 35px;line-height: 35px;">
+                        上传
+                    </div>
+
+                </div>
+                <!--<div class="btn_base" onclick="c()" style="width: 100px;height: 35px;line-height: 35px;">-->
+                    <!--定位-->
+                <!--</div>-->
+            </div>
+            <div class="loaders">
+                <div class="loader-inner line-spin-fade-loader">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-6 maxHeight" style="background-color: #f2f7f2;height: 776.8px">
+        <div class="center_img_div">
+            <div class="center_img" id="d1">
+                <canvas id="c1" style="margin:0 auto;display: block"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-3 maxHeight" id="rightScroll" style="padding-left: 0;display: none">
+        <div class="col-xs-12">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>宽</th>
+                    <th>高</th>
+                    <th>X轴</th>
+                    <th>Y轴</th>
+                </tr>
+                </thead>
+                <tbody id="rightContentbody">
+                </tbody>
+            </table>
+            <!--分页-->
+        </div>
+    </div>
+</div>
+<div class="loader" style="display: none">
+    <div class="loader-inner line-scale-pulse-out-rapid">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</div>
+<script src="{{ url_for('static', filename='lib/jquery/jquery-3.0.0.min.js') }}"></script>
+<script src="{{ url_for('static', filename='lib/layui/dist/layui.js') }}"></script>
+<script>
+    setTimeout("c()",1000);
+    changeSrc()
+	changeText()
+    function changeSrc() {
+        document.getElementById("topImg").src = "../static/photo/" + document.getElementById("dataUserName").value + "/" + document.getElementById("ChangePhotoName").value + ".jpg";
+    }
+	function changeText(){
+		var num = document.getElementById("ChangePhotoName").value;
+		var num_len = num.length;
+		var len = document.getElementById("data4").value;
+		if (num[num_len-4] != '/'){
+			document.getElementById("demo").innerHTML = "正在显示第" + num.slice(-1) + "张图片，共" + len + "张" ;
+		}else{
+			document.getElementById("demo").innerHTML = "正在显示第" + num[num_len-3] + "张图片第" + num.slice(-1) + "部分，共" + len + "张" ;
+		}
+		
+	}
+
+</script>
+<script src="{{ url_for('static', filename='lib/index.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		
+		<link rel="stylesheet" href="{{ url_for('static',filename='css/main.css')  }}">
+		<link rel="stylesheet" href="{{ url_for('static',filename='css/my.css')  }}">
+		<link rel="stylesheet" href="{{ url_for('static',filename='css/common.css')  }}">
+		<link rel="stylesheet" href="{{ url_for('static',filename='css/shopsManager.css')  }}">
+		<!-- <link rel="shortcut icon" href="http://www.yingmoo.com/img/favicon.ico" type="image/x-icon" /> -->
+		<!-- <link rel="shortcut icon" href="../img/favicon.ico"/> -->
+    <!-- <link rel="bookmark" href="../img/favicon.ico" type="image/x-icon"/> -->
+		
+		<!-- <script src="{{ url_for('static', filename='js/jquery-1.8.0.min.js') }}"></script> -->
+		<script src="{{ url_for('static', filename='js/jquery-1.7.2.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/common.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/navTop.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/jquery.circliful.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='lib/my.js') }}"></script>
+
+
+		<title>个人中心</title>
+	</head>
+
+	<body>	
+
+		<!-- 会员公共头部  开始-->
+		<div class="shop_wrap">
+			<div class="c100 nav_wrap">
+				<!-- <div class="fl shop_logo"> -->
+					<!-- <a href="http://www.yingmoo.com" title="鹰目网"><img src="images/shopLogo.png" /></a> -->
+					<!-- <a href="#" title="媒体主中心" class="midMag">媒体主中心</a> -->
+				<!-- </div> -->
+				<div class="fl nav act_nav">
+					<ul>
+						<li class="index-page-link hide"><a href="/blog/personal" class="on">个人中心</a></li>
+						<li><a href="/blog/three-shibie">我的主页</a></li>
+						<li><a href="#">后台</a></li>
+						<li><a href="/blog/login">登陆/注册</a></a></li>
+						<!-- <li><a class="" href="#">推广中心</a></li> -->
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- 会员公共头部  结束-->
+		<input type="hidden" value="{{ UserName }}" id="getUserName">
+		<!-- 内容  开始-->
+		<div class="wrap">
+			<div class="vip_cont c100 clearfix">
+				<!--左边列表导航  开始-->
+				<div class="fl vip_left vip_magLeft">
+					<dl>
+						<dt>用户名</dt>
+						<dd id="insert">
+							
+						</dd>
+					</dl>
+					
+				</div>
+				<!--左边列表导航  结束-->
+
+				<input type="hidden" value="{{ var1 }}" id="data1"/>
+				<input type="hidden" value="{{ var2 }}" id="data2"/>
+				<!--右边列表内容  开始-->
+				<div class="fr vip_right vip_magRight" id="insert1" >
+					
+				</div>
+				<!--右边列表内容  结束-->
+			</div>
+		</div>
+
+		<!-- 内容  结束-->
+		<!-- 登录界面 -->
+		 <form action="/blog/logina" id="login" method="post">
+		 
+		 </form>
+		<!-- footer start -->
+		<!-- footer页面底部 -->
+    <footer>
+       <div class="footer-box clearfix">
+          <div class="footer-left">
+              <span class="globle"></span>
+          </div>
+          <div class="footer-right">
+            <div class="footer-laber">
+              <ul>
+                <li><a href="/blog/three-shibie">识别系统&nbsp;&nbsp;</a></li>
+                <li><a href="/blog/second-AboutUs">老师介绍&nbsp;&nbsp;</a></li>
+                <li><a href="/blog/students">学生介绍&nbsp;&nbsp;</a></li>
+              </ul>
+              <ul>
+                <li><a href="/blog/DevelopmentProcess">开发历程&nbsp;&nbsp;</a></li>
+                <li><a href="/blog/firstPage">关于系统&nbsp;&nbsp;</a></li>
+               <li><a href="#">联系我们&nbsp;&nbsp;</a></li>
+              </ul>
+              <ul>
+                <li class="footer-contact">邮箱:&nbsp 508851230@qq.com</li>
+                <li class="footer-contact">电话:&nbsp +86 17376514197</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+    </footer>
+    <!-- 版权信息 -->
+    <div class="container copy">
+      <div class="row">
+          <div class="col-md-12 text-center">
+              <p class="copyright">©2014-2017 Shanghai HeYi Financial Services Limited. All rights reserved. <a href="http://www.miitbeian.gov.cn">沪ICP备 15008941 号</a> </p>
+          </div>
+      </div>
+    </div>
+		<!-- footer end -->
+
+	</body>
+<script>
+	var record = new Array();
+	
+	
+	
+	$(document).ready(function () {
+        var datas=[];
+        // var student = new Object();
+        // student.name = "Peng Shuang";
+        // student.age = 23;
+        // student.location = "China";
+        // var data = JSON.stringify(student)
+        var data = {};
+        data["user"] = "wu";
+		data["record"] = "wu";
+		data["time"] = "wu";
+		///////////////////////////////////////////////////////////////
+		data["type"] = "wu"
+        //////////////////////////////////////////////
+		datas.push(data);
+		var jsonString = JSON.stringify(datas);
+    $.ajax({
+        url: "/blog/sendjson3",
+        type: "POST",
+        data: jsonString,
+        success: function (msg) {
+			//console.log(msg);
+			$.ajax({
+						url: "/blog/sendjson4",
+						type: "POST",
+						data: jsonString,
+						success: function (msg1) {
+						for(var i=0;i<msg.length;i++)
+						{
+								var str = '<p style="font-size:16px;" id="p' + i + '">' + msg[i].userID + '</p>' ;
+								$("#insert").append(str) ;
+								str = '<div style="width:90%;height:1000px;margin:20px auto;border:1px solid#ddd;display:none" id="'+ i +'"><div class="word">零钱：' + msg[i].money + '</div><div class="word">未到账的零钱：' + msg[i].money_wait + '</div><div style="height:30px"></div><div class="word1">PDF:  ' + msg[i].PDF + ' 个</div><div><table border="1" class="tb" id="tt' + i +'"><tr><th>record</th><th>datetime</th><th>name</th></tr>';
+								//$("#insert1").append(str) ;
+								
+								for(var j=0;j<msg1.length;j++)
+								{
+									if (msg[i].userID == msg1[j].user && msg1[j].type == 1)
+									{
+											//console.log(i);
+											var str1 = '<tr><td>' + msg1[j].record + '</td><td>' + msg1[j].time + '</td><td>' + msg1[j].name + '</td></tr>';
+											var s = '#tt' + i;
+											console.log(s);
+											str = str + str1 ;
+											//$(s).append(str1) ;
+											//alert("success") ;
+									}
+
+								}
+								str += '</table></div><div class="word1">图片:  ' + msg[i].photo + ' 个</div><div><table border="1" class="tb" id="pp' + i +'"><tr><th>record</th><th>datetime</th><th>数量</th><th>name</th></tr>';
+								//$("#insert1").append(str) ;
+								for(var j=0;j<msg1.length;j++)
+								{
+									if (msg[i].userID == msg1[j].user && msg1[j].type == 0)
+									{
+											//console.log(i);
+											var str1 = '<tr><td>' + msg1[j].record + '</td><td>' + msg1[j].time + '</td><td>' + msg1[j].num + '</td><td>' + msg1[j].name + '</td></tr>';
+											var s = '#pp' + i;
+											console.log(s);
+											str += str1 ;
+											//$(s).append(str1) ;
+											//alert("success") ;
+									}
+
+								}
+								str += '</table></div></div>' ;
+								$("#insert1").append(str) ;
+								console.log(msg1);
+								//alert("success") ;
+								/*document.getElementById("p" + i).onclick = function(){
+									document.getElementById("" + i).style.display = "none";
+									$("#" + i).siblings().css("display", "none") ;
+									alert("hgeog") ;
+								}*/
+								document.getElementById("p0").onclick = function(){
+									document.getElementById("0").style.display = "block";
+									$("#0").siblings().css("display", "none") ;
+									//alert("hgeog") ;
+								}
+								
+
+						}
+							document.getElementById("p1").onclick = function(){
+									document.getElementById("1").style.display = "block";
+									$("#1").siblings().css("display", "none") ;
+									//alert("hgeog") ;
+								}
+
+						}
+					});
+            
+			console.log(msg);
+
+        }
+    });
+    });
+	
+	function fun1(){
+		
+	}
+	/*$(document).ready(function (){
+		$.ajax({
+			url: "/blog/sendjson3",
+			type: "POST",
+			data: 1,
+			success: function (msg) {
+				$.ajax({
+					url: "/blog/sendjson4",
+					type: "POST",
+					data: 1,
+					success: function (msg1) {
+						console.log(msg);
+						console.log(msg1);
+					}
+				})
+			}
+		})
+	})*/
+	//document.write(record[1] + "good!") ;
+	//document.write("this is a good idea!") ;
+</script>
+</html>

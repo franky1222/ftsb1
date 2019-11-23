@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		
+		<link rel="stylesheet" href="{{ url_for('static',filename='css/main.css')  }}">
+		<link rel="stylesheet" href="{{ url_for('static',filename='css/my.css')  }}">
+		<link rel="stylesheet" href="{{ url_for('static',filename='css/common.css')  }}">
+		<link rel="stylesheet" href="{{ url_for('static',filename='css/shopsManager.css')  }}">
+		<!-- <link rel="shortcut icon" href="http://www.yingmoo.com/img/favicon.ico" type="image/x-icon" /> -->
+		<!-- <link rel="shortcut icon" href="../img/favicon.ico"/> -->
+    <!-- <link rel="bookmark" href="../img/favicon.ico" type="image/x-icon"/> -->
+		
+		<!-- <script src="{{ url_for('static', filename='js/jquery-1.8.0.min.js') }}"></script> -->
+		<script src="{{ url_for('static', filename='js/jquery-1.7.2.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/common.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/navTop.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/jquery.circliful.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='lib/my.js') }}"></script>
+
+
+		<title>个人中心</title>
+	</head>
+
+	<body>	
+
+		<!-- 会员公共头部  开始-->
+		<div class="shop_wrap">
+			<div class="c100 nav_wrap">
+				<!-- <div class="fl shop_logo"> -->
+					<!-- <a href="http://www.yingmoo.com" title="鹰目网"><img src="images/shopLogo.png" /></a> -->
+					<!-- <a href="#" title="媒体主中心" class="midMag">媒体主中心</a> -->
+				<!-- </div> -->
+				<div class="fl nav act_nav">
+					<ul>
+						<li class="index-page-link hide"><a href="javascript:location.reload()" class="on">个人中心</a></li>
+						<li><a href="/blog/three-shibie">我的主页</a></li>
+						<li><a href="/blog/backstage">后台</a></li>
+						<li><a href="/blog/login">登陆/注册</a></a></li>
+						<!-- <li><a class="" href="#">推广中心</a></li> -->
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- 会员公共头部  结束-->
+		<input type="hidden" value="{{ UserName }}" id="getUserName">
+		<!-- 内容  开始-->
+		<div class="wrap">
+			<div class="vip_cont c100 clearfix">
+				<!--左边列表导航  开始-->
+				<div class="fl vip_left vip_magLeft">
+					<dl>
+						<dt>个人信息</dt>
+						<dd>
+							<p><a href="/blog/change" target="_self">我的零钱</a></p>
+							<p><a href="/blog/book" target="_self">我的书籍</a></p>
+							<p><a href="/blog/photo" target="_self">我的图片</a></p>
+							<p><a href="/blog/earn" target="_self">赚取零钱</a></p>
+							<p><a href="/blog/message" target="_self">消息中心</a></p>
+							<p><a href="/blog/member" target="_self" >会员信息</a></p>
+						</dd>
+					</dl>
+					<!-- <dl> -->
+						<!-- <dt>鹰目活动</dt> -->
+					<!-- </dl> -->
+					<!-- <dl> -->
+						<!-- <dt>我的鹰监测</dt> -->
+					<!-- </dl> -->
+					<dl>
+						<dt>我的账号</dt>
+						<dd>
+							<p><a href="javascript:location.reload()" target="_self">基本资料</a></p>
+							<p><a href="/blog/change_password" target="_self">修改密码</a></p>
+							<p><a href="#" target="_self">账户设置</a></p>
+						</dd>
+					</dl>
+				</div>
+				<!--左边列表导航  结束-->
+
+				<input type="hidden" value="{{ var1 }}" id="data1"/>
+				<input type="hidden" value="{{ var2 }}" id="data2"/>
+				<!--右边列表内容  开始-->
+				<div class="fr vip_right vip_magRight">
+					<!--用户信息  开始 -->
+					<div class="cus01">
+						<div class="cusImg">
+							<img id="icon" style="width:127px;height:127px;" src="../static/img/1.png" title="更换头像" />
+							<input  type="file" id="file"  style="display:none" name="photo" accept="image/*" />
+						</div>
+						<div class="cusName">
+							<p title="用户名称">用户名称:{{ UserName }}</p>
+							<span title="繁体字有限公司">公司名称：繁体字有限公司</span>
+							<span class="bdTell">账号绑定<i></i><em>187****3765</em></span>
+						</div>
+					</div>
+					<ul class="cus02">
+						<li>
+							<p><span>PDF文件</span><a href="/blog/book" target="_self">去查看</a></p>
+							<span class="numbers"><font>{{ var1 }}</font>个</span>
+						</li>
+						<li>
+							<p><span>图片</span><a href="/blog/photo" target="_self">去查看</a></p>
+							<span class="numbers"><font>{{ var2 }}</font>张</span>
+						</li>
+						<li>
+							<p><span>个人资料</span><a href="#" target="_self">去完善</a></p>
+							<script>
+							$(function(){
+								$('#myStat').circliful();
+							});
+							</script>
+							<span class="numbers mystat">
+								<div id="myStat" data-dimension="60" data-text="85%" data-info="New Clients" data-width="10" data-fontsize="12" data-percent="85" data-fgcolor="#ff6561" data-bgcolor="#eee" data-fill="#FFF" class="circliful" style="width: 60px;"></div>
+							</span>
+						</li>
+					</ul>
+					<!-- 用户信息  结束 -->
+					<div class="cus03">
+						<div class="mess">
+							<a href="#" target="_blank"><i></i>成为VIP会员享有更多优惠。>>点击了解详情</a>
+						</div>
+					</div>
+				</div>
+				<!--右边列表内容  结束-->
+			</div>
+		</div>
+
+		<!-- 内容  结束-->
+		<!-- 登录界面 -->
+		 <form action="/blog/logina" id="login" method="post">
+		 
+		 </form>
+		<!-- footer start -->
+		<!-- footer页面底部 -->
+    <footer>
+       <div class="footer-box clearfix">
+          <div class="footer-left">
+              <span class="globle"></span>
+          </div>
+          <div class="footer-right">
+            <div class="footer-laber">
+              <ul>
+                <li><a href="/blog/three-shibie">识别系统&nbsp;&nbsp;</a></li>
+                <li><a href="/blog/second-AboutUs">老师介绍&nbsp;&nbsp;</a></li>
+                <li><a href="/blog/students">学生介绍&nbsp;&nbsp;</a></li>
+              </ul>
+              <ul>
+                <li><a href="/blog/DevelopmentProcess">开发历程&nbsp;&nbsp;</a></li>
+                <li><a href="/blog/firstPage">关于系统&nbsp;&nbsp;</a></li>
+               <li><a href="#">联系我们&nbsp;&nbsp;</a></li>
+              </ul>
+              <ul>
+                <li class="footer-contact">邮箱:&nbsp 508851230@qq.com</li>
+                <li class="footer-contact">电话:&nbsp +86 17376514197</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+    </footer>
+    <!-- 版权信息 -->
+    <div class="container copy">
+      <div class="row">
+          <div class="col-md-12 text-center">
+              <p class="copyright">©2014-2017 Shanghai HeYi Financial Services Limited. All rights reserved. <a href="http://www.miitbeian.gov.cn">沪ICP备 15008941 号</a> </p>
+          </div>
+      </div>
+    </div>
+		<!-- footer end -->
+
+	</body>
+<script>
+document.getElementById('icon').onclick = function () {
+	document.getElementById('file').click() ;
+}
+document.getElementById('file').onchange = function () {
+	var img1 = document.getElementById("file").files[0] ;
+	document.getElementById("icon").src = window.URL.createObjectURL(img1) ;
+}
+</script>
+</html>

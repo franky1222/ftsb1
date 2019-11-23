@@ -1,0 +1,160 @@
+.empty_img{
+	text-align:center;
+	padding:50px 0 34px 0 ;
+}
+.empty_con{
+	height:100px;
+	line-height:26px;
+	font-size:16px;
+	color:#adadad;
+	text-align:center;
+}
+.ch{
+	padding:25px 40px;
+	height:200px;
+	border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+.ch span {
+	font-size:16px;
+	/* height:26px; */
+	/* line-height:50px; */
+}
+.part{
+	width:220px;
+}
+.part a{
+	float:right;
+	font-size:16px;
+	width:80px;
+	border:1px solid#ddd;
+	text-align:center;
+}
+.order {
+   height: 60px;
+   line-height: 60px;
+   text-align: center;
+}
+ .order .line {
+   display: inline-block;
+   width: 150px;
+   border-top: 1px solid #ccc ;
+}
+.order .txt {
+   color: #686868;
+   vertical-align: -4px;
+   font-size:18px;
+}
+.tip{
+	margin:0 auto;
+	/* padding:30px 0; */
+	width:80%;
+	text-align:center;
+	color:green;
+	font-size:14px;
+}
+.btn_base{
+	width:100px;
+	height:35px;
+	line-height:35px;
+	text-align:center;
+	padding:0 10px;
+	border-radius: 4px;
+	background:#ddd;
+	margin:10px 20px;
+	float:left;
+}
+.char{
+	float:left;
+	width:60%;
+	height:35px;
+	line-height:35px;
+	padding:0 10px;
+	margin:10px 20px;
+	font-size:14px;
+}
+.img{
+	width:90%;
+	height:830px;
+	padding:30px 30px;
+	margin:0 auto;
+}
+.img1{
+	float:left;
+	padding:3px;
+	border:1px solid#ddd;
+	margin:10px 20px;
+	
+}
+.btn{
+	width:98px;
+	height:30px;
+	border:1px solid#ececec;
+	border-radius:4px;
+	font-size:14px;
+	color:#333;
+	text-align:center;
+	margin:15px 22px;
+	line-height: 35px;
+	position:relative;
+	cursor:pointer;
+	float:right;
+	display: inline-block;
+}
+.form1{
+	width:640px;
+}
+.form1 label .a-num{
+	width:98px;
+	height:30px;
+	border:1px solid#ececec;
+	border-radius:4px;
+	font-size:14px;
+	color:#333;
+	text-align:center;
+	margin-right:20px;
+	margin-bottom:10px;
+	position:relative;
+	cursor:pointer;
+	display:inline-block;
+}
+.form1 span{
+	width:140px;
+	height:30px;
+	display:inline-block;
+	text-align:center;
+	line-height:35px;
+	color:#333;
+	font-size:14px;
+}
+.form1 label .active{
+	border:1px solid #229fe7;
+}
+.word{
+	width:300px;
+	font-size:24px;
+	margin-left:20px;
+	margin-top:20px;
+	float:left;
+}
+.word1{
+	width:300px;
+	font-size:24px;
+	margin-top:50px;
+	margin-left:20px;
+}
+.tb{
+	margin:20px auto;
+}
+.tb  tr th{
+	border: 1px solid#353e4f;
+	font-size:24px;
+	width:220px;
+	text-align:center;
+}
+.tb  tr td{
+	border: 1px solid#353e4f;
+	font-size:16px;
+	width:200px;
+	text-align:center;
+}

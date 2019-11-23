@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		
+		<link rel="stylesheet" href="{{ url_for('static',filename='css/main.css')  }}">
+		<link rel="stylesheet" href="{{ url_for('static',filename='css/my.css')  }}">
+		<link rel="stylesheet" href="{{ url_for('static',filename='css/common.css')  }}">
+		<link rel="stylesheet" href="{{ url_for('static',filename='css/shopsManager.css')  }}">
+		<!-- <link rel="shortcut icon" href="http://www.yingmoo.com/img/favicon.ico" type="image/x-icon" /> -->
+		<!-- <link rel="shortcut icon" href="../img/favicon.ico"/> -->
+    <!-- <link rel="bookmark" href="../img/favicon.ico" type="image/x-icon"/> -->
+		
+		<!-- <script src="{{ url_for('static', filename='js/jquery-1.8.0.min.js') }}"></script> -->
+		<script src="{{ url_for('static', filename='js/jquery-1.7.2.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/common.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/navTop.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/jquery.circliful.min.js') }}"></script>
+
+
+		<title>个人中心</title>
+	</head>
+
+	<body>	
+
+		<!-- 会员公共头部  开始-->
+		<div class="shop_wrap">
+			<div class="c100 nav_wrap">
+				<!-- <div class="fl shop_logo"> -->
+					<!-- <a href="http://www.yingmoo.com" title="鹰目网"><img src="images/shopLogo.png" /></a> -->
+					<!-- <a href="#" title="媒体主中心" class="midMag">媒体主中心</a> -->
+				<!-- </div> -->
+				<div class="fl nav act_nav">
+					<ul>
+						<li class="index-page-link hide"><a href="javascript:location.reload()" class="on">个人中心</a></li>
+						<li><a href="/blog/three-shibie">我的主页</a></li>
+						<li><a href="/blog/login">登陆/注册</a></a></li>
+						<!-- <li><a class="" href="#">推广中心</a></li> -->
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- 会员公共头部  结束-->
+		<input type="hidden" value="{{ UserName }}" id="getUserName">
+		<!-- 内容  开始-->
+		<div class="wrap">
+			<div class="vip_cont c100 clearfix">
+				<!--左边列表导航  开始-->
+				<div class="fl vip_left vip_magLeft">
+					<dl>
+						<dt>个人信息</dt>
+						<dd>
+							<p><a href="/blog/change" target="_self">我的零钱</a></p>
+							<p><a href="/blog/book" target="_self">我的书籍</a></p>
+							<p><a href="/blog/photo" target="_self">我的图片</a></p>
+							<p><a href="/blog/earn" target="_self">赚取零钱</a></p>
+							<p><a href="/blog/message" target="_self">消息中心</a></p>
+							<p><a href="/blog/member" target="_self" >会员信息</a></p>
+						</dd>
+					</dl>
+					<!-- <dl> -->
+						<!-- <dt>鹰目活动</dt> -->
+					<!-- </dl> -->
+					<!-- <dl> -->
+						<!-- <dt>我的鹰监测</dt> -->
+					<!-- </dl> -->
+					<dl>
+						<dt>我的账号</dt>
+						<dd>
+							<p><a href="/blog/personal" target="_self">基本资料</a></p>
+							<p><a href="/blog/change_password" target="_self">修改密码</a></p>
+							<p><a href="#" target="_self">账户设置</a></p>
+						</dd>
+					</dl>
+				</div>
+				<!--左边列表导航  结束-->
+
+				<!--右边列表内容  开始-->
+				<div class="fr vip_right vip_magRight">
+					<div class="order">
+						<span class="line"></span>
+						<span class="txt">赚取零钱</span>
+						<span class="line"></span>
+					</div>
+					<div class="tip">
+						温馨提示：上传可准确识别的单字图片，可获得百张一元的奖励，审核后会将奖励打到零钱。
+						<div style="height:30px"></div>
+					</div>
+					<div>
+                        <label for="file" class=" btn_base" style="width: 100px;height: 35px;line-height: 35px;">选择文件</label>
+                        <input  type="file" multiple id="file"  style="display:none" name="photo" accept="image/*" onchange="FileCountCheck()" />
+						<div class="char" id="tex1"></div>
+                    </div>
+					<div>
+                        <label id="btn1"  class="btn_base" style="width: 100px;height: 35px;line-height: 35px;">上传</label>
+                        <!-- <button  type="submit" id="btn1" style="display: none" name="btn1"></button> -->
+						<div class="char" id="tex2"></div>
+                    </div>
+					<div class="char" id="tex3"></div>
+				</div>
+				<!--右边列表内容  结束-->
+			</div>
+		</div>
+
+		<!-- 内容  结束-->
+
+		<!-- footer start -->
+		<!-- footer页面底部 -->
+    <footer>
+       <div class="footer-box clearfix">
+          <div class="footer-left">
+              <span class="globle"></span>
+          </div>
+          <div class="footer-right">
+            <div class="footer-laber">
+              <ul>
+                <li><a href="/blog/three-shibie">识别系统&nbsp;&nbsp;</a></li>
+                <li><a href="/blog/second-AboutUs">老师介绍&nbsp;&nbsp;</a></li>
+                <li><a href="/blog/students">学生介绍&nbsp;&nbsp;</a></li>
+              </ul>
+              <ul>
+                <li><a href="/blog/DevelopmentProcess">开发历程&nbsp;&nbsp;</a></li>
+                <li><a href="/blog/firstPage">关于系统&nbsp;&nbsp;</a></li>
+               <li><a href="#">联系我们&nbsp;&nbsp;</a></li>
+              </ul>
+              <ul>
+                <li class="footer-contact">邮箱:&nbsp 508851230@qq.com</li>
+                <li class="footer-contact">电话:&nbsp +86 17376514197</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+    </footer>
+    <!-- 版权信息 -->
+    <div class="container copy">
+      <div class="row">
+          <div class="col-md-12 text-center">
+              <p class="copyright">©2014-2017 Shanghai HeYi Financial Services Limited. All rights reserved. <a href="http://www.miitbeian.gov.cn">沪ICP备 15008941 号</a> </p>
+          </div>
+      </div>
+    </div>
+		<!-- footer end -->
+<form action="/blog/money" method="post" id="fm" name="fm">
+    <input type="hidden" value="" id="data1" name="data1">
+</form>
+	</body>
+<script>
+var data;
+document.getElementById('file').onchange = function () {
+	fs = document.getElementById("file").files.length;
+	data = fs;
+	<!-- data = data.toFixed(2); -->
+	document.getElementById('tex2').innerHTML = "" ;
+	document.getElementById('tex1').innerHTML = "已选择" + fs + "张图片" ;
+}
+document.getElementById('btn1').onclick = function () {
+var fileType = getFileType($('input[name="photo"]').val());
+	if($('input[name="photo"]').val()==null || $('input[name="photo"]').val()=='')
+	{
+	  alert("请上传图片!");
+	   return false;
+	}
+	<!-- document.getElementById('tex2').innerHTML = "上传成功！" ; -->
+	<!-- document.getElementById('tex3').innerHTML = "您已成功上传" + fs + "张图片,审核后会把奖励打到您的账户！" ; -->
+	$(fm.data1).val(data);
+	<!-- $(fm).submit(); -->
+	
+	$.ajax({
+		url:"/blog/money",
+		type:"POST",
+		dataType:"json",
+		data:$("#fm").serialize(),
+		success:function(){
+		}
+	})
+	setTimeout("location.reload()",1500) ;
+	alert("上传成功！\n您已成功上传" + fs + "张图片,审核后会把奖励打到您的账户！") ;
+}
+<!-- $("#fm").sumbit(function(){ -->
+	<!-- //parent.layer.close(index);	//再执行关闭 -->
+	<!-- $.ajax({ -->
+		<!-- url:"/blog/money", -->
+		<!-- type:"POST", -->
+		<!-- dataType:"json", -->
+		<!-- data:$("#fm").serialize(), -->
+		<!-- success:function(){ -->
+		<!-- } -->
+	<!-- }) -->
+<!-- }) -->
+
+function getFileType(filePath) {
+	var startIndex = filePath.lastIndexOf(".");
+	if(startIndex != -1)
+		return filePath.substring(startIndex + 1, filePath.length).toLowerCase();
+	else return "";
+}
+</script>
+</html>

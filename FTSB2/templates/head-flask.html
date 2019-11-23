@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <meta name="description" content="以繁体字转换为根本，致力于繁体字与简体字的转换" />
+    <meta name="keywords" content="创新" />
+    <meta name="author" content="HeYi">
+    <title>基于深度学习的繁体字识别系统-识别转换</title>
+    <!-- 框架 -->
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.css')  }}">
+
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/normalize.css')  }}">
+    <!-- 样式清理 -->
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/main.css')  }}">
+    <!-- 通用页面样式 -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/index.css')  }}">
+     <link rel="stylesheet" href="{{ url_for('static',filename='lib/assets/css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='lib/css/FTSB1.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='lib/layui/dist/css/layui.css')  }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='lib/css/loaders.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='lib/css/lanrenzhijia.css')  }}">
+    <!-- HTML5兼容性处理 -->
+    <!-- Respond.js响应式设计>
+
+    <![endif]-->
+    <!-- Favicons网站图标 -->
+    <link rel="shortcut icon" href="../img/favicon.ico"/>
+    <link rel="bookmark" href="../img/favicon.ico" type="image/x-icon"/>
+  </head>
+  <body>
+    <!--&lt;!&ndash; 移动端导航 &ndash;&gt;-->
+    <!--<div class="mask"></div>-->
+    <!--<div class="sidebar">-->
+      <!--<ul>-->
+        <!--<li><a href="index.html">首页</a></li>-->
+        <!--<li><a href="aboutus.html">关于我们</a></li>-->
+        <!--<li><a href="team.html">专业团队</a></li>-->
+		<!--<li><a href="adviser.html">专业顾问</a></li>-->
+        <!--<li><a href="culture.html">公司文化</a></li>-->
+        <!--<li><a href="job.html">求职招聘</a></li>-->
+        <!--<li><a href="contactus.html">联系我们</a></li>-->
+        <!--<li><a href="product.html">资产证券化</a></li>-->
+        <!--<li><a href="product-2.html">基金服务</a></li>-->
+        <!--<li><a href="product-3.html">金融科技</a></li>-->
+      <!--</ul>-->
+    <!--</div>-->
+    <!-- header顶部导航 -->
+   <header>
+      <div class="header-container">
+        <div class="nav-box">
+          <!-- logo -->
+          <div class="nav-left">
+            <a id="logo_top" href="#"></a>
+          </div>
+          <!-- memu选项 -->
+          <div class="nav-mid">
+            <div id="lang">
+                <input type="hidden" value="{{ UserName }}" id="getUserName">
+              <div id="typediv1" style="visibility:hidden ;text-align:right"><font size="2" color="#ffffff">当前登陆的用户为：{{ UserName }}</font>
+             <button id="btn" class="btn_base" onclick="QiutLogin();">退出登录</button>
+                      <div style="height: 10px"></div>
+              <button id="btn_record" class="btn_base" onclick="check_record();" >历史纪录</button>
+         </div>
+                <div id="typediv2" style="visibility:visible ; text-align:right"><font size="2" color="#ffffff">您当前还没有登陆，请您登陆</font>
+         </div>
+            </div>
+            <ul id="s" class="navbar-nav">
+              <li><a class="" href="/blog/firstPage"><font size="5" color="#ffffff" style="font-weight: bold" >首页</font></a></li>
+              <li><a class="" href="/blog/second-AboutUs"><font size="5" color="#ffffff" style="font-weight: bold" >关于我们</font></a></li>
+              <li><a class="" href="/blog/three-shibie"><font size="5" color="#ffffff" style="font-weight: bold" >识别系统</font></a></li>
+              <li><<a class="active" href="/blog/logina"><font size="5" color="#ffffff" style="font-weight: bold" >登陆/注册</font></a></li>
+            </ul>
+          </div>
+          <!-- 响应式菜单 -->
+          <div class="nav-mobile-menu">
+              <span class="sidebar_trigger"></span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!--退出登录模块-->
+     <form action="/blog/quitLogin"  id= "quitL" method="post">
+
+     </form>
+ <div class="zhanWei"></div>
+
+    <!--<div id="org2" class="org-container">-->
+      <!--<h3 style="text-align: center;font-size: 20px;color:#c7161e">- 合作机构 -</h3>-->
+      <!--<div class="org-container-wap">-->
+          <!--&lt;!&ndash; 动态插入img图片 &ndash;&gt;-->
+      <!--</div>-->
+      <!--<br>-->
+    <!--</div>-->
+     <div id="RecogDispaly" style="visibility: hidden" class="feature1 clearfix">
+    <iframe src="/blog/loginq" frameborder="0" visibility="visible"  width="100%" height="900px" name="ife" id="contentIframe"></iframe>
+    </div>
+    <!-- footer页面底部 -->
+    <footer>
+       <div class="footer-box clearfix">
+          <div class="footer-left">
+              <span class="globle"></span>
+          </div>
+          <div class="footer-right">
+            <div class="footer-laber">
+                <ul>
+                <li><a href="/blog/three-shibie">识别系统&nbsp;&nbsp;</a></li>
+                <li><a href="/blog/second-AboutUs">老师介绍&nbsp;&nbsp;</a></li>
+                <li><a href="/blog/students">学生介绍&nbsp;&nbsp;</a></li>
+              </ul>
+              <ul>
+                <li><a href="/blog/DevelopmentProcess">开发历程&nbsp;&nbsp;</a></li>
+                <li><a href="/blog/firstPage">关于系统&nbsp;&nbsp;</a></li>
+                <li><a href="#">联系我们&nbsp;&nbsp;</a></li>
+              </ul>
+              <ul>
+                <li class="footer-contact">邮箱:&nbsp 508851230@qq.com</li>
+                <li class="footer-contact">电话:&nbsp +86 17376514197</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+    </footer>
+    <!-- 版权信息 -->
+    <div class="container copy">
+      <div class="row">
+          <div class="col-md-12 text-center">
+            <p class="copyright">©2017-2019 By &nbsp 李万清老师和他的学生们 </p>       </div>
+      </div>
+    </div>
+    <!-- 返回顶部按钮 -->
+    <button class="back-to-top" style="display: none;"></button>
+    <!-- 框架库加载 -->
+      <script>
+       function QiutLogin() {
+        document.getElementById('quitL').submit();
+    }
+ function del(n)
+{
+var s=document.getElementById('s');
+var t=s.childNodes.length;
+for (var i=0;i<t;i++)
+{
+if (i==n-1)
+{
+s.removeChild(s.childNodes[i]);
+}
+}
+}
+        function CheckUser() {
+        var name =document.getElementById('getUserName').value;
+        if (name == '') {
+             document.getElementById("typediv1").style.visibility="hidden";
+            document.getElementById("typediv2").style.visibility="visible";
+            document.getElementById("RecogDispaly").style.visibility="visible";
+        }
+        else
+        {
+             document.getElementById("typediv1").style.visibility="hidden";
+            document.getElementById("typediv2").style.visibility="hidden";
+            document.getElementById("RecogDispaly").style.visibility="hidden";
+            del(8);
+            // document.getElementById("LogoDisplay").style.visibility="hidden";
+        }
+
+    }
+    CheckUser();
+    </script>
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+
+  </body>
+</html>

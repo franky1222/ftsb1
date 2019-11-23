@@ -1,0 +1,174 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="{{ url_for('static',filename='lib/assets/css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='lib/css/ss.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='lib/layui/dist/css/layui.css')  }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='lib/css/loaders.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='lib/css/lanrenzhijia.css')  }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='lib/css/AlipayLiuCheng.css')  }}">
+    <title></title>
+</head>
+<body>
+
+<div class="main clearfix">
+    <!--<header class="header">-->
+    <!--<div style="text-align:center"><font size="5">繁体字识别系统</font></div>-->
+    <!--<div style="text-align:right"><font size="2">当前登陆的用户为：{{ UserName }}</font>-->
+    <!--<button id="bt" class="btn_base" onclick="QiutLogin();">退出登录</button>-->
+    <!--</div>-->
+    <!--</header>-->
+    <!--<form action="/quitLogin"  id= "quitL" method="post">-->
+
+    <!--</form>-->
+    <div class="grid-780 grid-780-pd fn-hidden fn-clear">
+        <div class="navi-container">
+            <ol class="ui-step    ui-step-4 ">
+                <li id="li1" class="ui-step-start ui-step-active">
+                    <div class="ui-step-line">-</div>
+                    <div class="ui-step-icon">
+                        <i id="li1-t" class="iconfont">y</i>
+                        <i class="ui-step-number">1</i>
+                        <span class="ui-step-text">上传图片</span>
+                    </div>
+                </li>
+
+                <li id="li2" style="color: #f16f20">
+                    <div class="ui-step-line">-</div>
+                    <div class="ui-step-icon">
+                        <i id="li2-t" style="color: #f16f20" class="iconfont ">y</i>
+                        <i class="ui-step-number">2</i>
+                        <span class="ui-step-text">定位&调整</span>
+                    </div>
+                </li>
+
+                <li id="li3" style="color: #f16f20">
+                    <div class="ui-step-line">-</div>
+                    <div class="ui-step-icon">
+                        <i id="li3-t" style="color: #f16f20" class="iconfont ">y</i>
+                        <i class="ui-step-number">3</i>
+                        <span class="ui-step-text">识别&改错</span>
+                    </div>
+                </li>
+                <li id="li4" class="ui-step-end">
+                    <!-- <div class="ui-step-line">-</div>     -->
+                    <div class="ui-step-icon">
+                        <i class="iconfont">y</i>
+                        <i id="li4-t" class="iconfont ui-step-number"></i>
+                        <span class="ui-step-text">下载</span>
+                    </div>
+                </li>
+            </ol>
+        </div>
+
+    </div>
+	<div  class="process">
+		<p id="demo"></p>
+	</div>
+
+    <div class="grid-780 grid-780-pd fn-hidden fn-clear" id="li_pn" style="display: none">
+        <div class="navi-container">
+            <ol class="ui-step    ui-step-4 ">
+                <li id="li5" class="ui-step-start ui-step-active">
+                    <div class="ui-step-line">-</div>
+                    <div class="ui-step-icon">
+                        <i id="li5-t" class="iconfont">y</i>
+                        <i class="ui-step-number">1</i>
+                        <span class="ui-step-text">左上</span>
+                    </div>
+                </li>
+
+                <li id="li6">
+                    <div class="ui-step-line">-</div>
+                    <div class="ui-step-icon">
+                        <i id="li6-t" class="iconfont">y</i>
+                        <i class="ui-step-number">2</i>
+                        <span class="ui-step-text">右上</span>
+                    </div>
+                </li>
+
+                <li id="li7">
+                    <div class="ui-step-line">-</div>
+                    <div class="ui-step-icon">
+                        <i id="li7-t" class="iconfont">y</i>
+                        <i class="ui-step-number">3</i>
+                        <span class="ui-step-text">左下</span>
+                    </div>
+                </li>
+                <li id="li8" class="ui-step-end">
+                    <!--<div class="ui-step-line">-</div>-->
+                    <div class="ui-step-icon">
+                        <i id="li8-t" class="iconfont">y</i>
+                        <i class="ui-step-number">4</i>
+                        <span class="ui-step-text">右下</span>
+                    </div>
+                </li>
+            </ol>
+        </div>
+
+    </div>
+    <div class="col-xs-6 maxHeight" style="background-color: #f2f7f2;height: 760px">
+        <div class="center_img_div">
+            <div class="center_img">
+                <canvas id="c1" width="600" height="600" style="margin:0 auto;display: block"></canvas>
+                <canvas id="fd" width="200" height="200" style="display: none;position: absolute"></canvas>
+            </div>
+            <button id="btn" class="btn_base" style="width: 100px;height: 35px;line-height: 35px;">下载</button>
+            <!--<textarea id="text"></textarea>-->
+        </div>
+    </div>
+
+    <div class="col-xs-6 maxHeight" style="background-color: #f2f7f2;height: 760px">
+        <div class="center_img_div">
+            <div class="center_img">
+                <canvas id="c2" width="600" height="600" style="margin:0 auto;display: block"></canvas>
+            </div>
+        </div>
+    </div>
+
+</div>
+<input type="hidden" value="{{ data }}" id="data">
+<input type="hidden" value="{{ data1 }}" id="data1">
+<input type="hidden" value="{{ data4 }}" id="ChangePhotoName">
+<input type="hidden" value="{{ final_txt }}" id="merge"/>
+<input type="hidden" value="{{ UserName }}" id="ChangeUserName">
+<img src="" id="img" style="display:none"/>
+<form action="/blog/cuncu2" method="post" id="fm" name="fm">
+    <input type="hidden" value="" id="h1data" name="h1data">
+    <input type="hidden" value="" id="h2data" name="h2data">
+    <input type="hidden" value="" id="h3data" name="h3data">
+	<input type="hidden" value="" id="h4data" name="h4data">
+</form>
+</body>
+<script src="{{ url_for('static', filename='lib/download.js') }}"></script>
+<script src="{{ url_for('static', filename='lib/jquery/jquery-3.0.0.min.js') }}"></script>
+<script src="{{ url_for('static', filename='lib/eel.js') }}"></script>
+<script src="{{ url_for('static', filename='lib/ss.js') }}"></script>
+<script>
+    changeSrc()
+	changeText()
+    function changeSrc() {
+        document.getElementById("img").src = "../static/photo/" + document.getElementById('ChangeUserName').value + '/' + document.getElementById("ChangePhotoName").value + ".jpg";
+    }
+
+    function QiutLogin() {
+        document.getElementById('quitL').submit();
+    }
+	function changeText(){
+		var num = document.getElementById("ChangePhotoName").value;
+		var num_len = num.length;
+		var len = document.getElementById("data1").value;
+		if (num[num_len-4] != '/'){
+			document.getElementById("demo").innerHTML = "正在显示第" + num.slice(-1) + "张图片，共" + len + "张" ;
+			document.getElementById("btn").innerHTML = "下载" ;
+		}else{
+			document.getElementById("demo").innerHTML = "正在显示第" + num[num_len-3] + "张图片第" + num.slice(-1) + "部分，共" + len + "张" ;
+			document.getElementById("btn").innerHTML = "下一张" ;
+			if (num[num_len-1] == '4')
+				document.getElementById("btn").innerHTML = "下载" ;
+		}
+		
+	}
+	
+</script>
+</html>

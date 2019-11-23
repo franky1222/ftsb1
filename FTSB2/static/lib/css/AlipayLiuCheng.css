@@ -1,0 +1,451 @@
+  .grid-780-pd {
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+.process{
+	/* float:right; */
+	/* border:1px solid #F00; */
+	width:300px;
+	height:25px;
+	text-align:right;
+	right:0;
+	top:90px;
+	position:absolute;
+	
+}
+.ui-step-icon .ui-step-number {
+    line-height: 14px;
+    font-style: normal;
+    position: absolute;
+    top: 7px;
+    left: 0;
+    padding: 0 20px;
+    font-weight: 700;
+    color: #fff;
+}
+.grid-780 {
+    margin: 0 auto;
+    width: 778px;
+	/* border:1px solid #F00; */
+	/* float:right; */
+	/* margin-right:25% */
+}
+.fn-clear {
+    zoom: 1;
+}
+.navi-container {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+.ui-step {
+    padding: 0 40px;
+    margin: 0 auto;
+    font-size: 14px;
+    list-style: none;
+    zoom: 1;
+    position: relative;
+    color: #b7b7b7;
+    overflow: hidden;
+}
+ol, ul {
+    list-style: none;
+}
+.ui-step .ui-step-active {
+    color: #f16f20;
+}
+.ui-step-4 li {
+    width: 33%;
+}
+.ui-step li {
+    float: left;
+    height: 54px;
+    margin: 0;
+    width: 25%;
+    position: relative;
+}
+.ui-step li .ui-step-line {
+    height: 3px;
+    background: #b9b9b9;
+    display: block;
+    margin-top: 14px;
+    line-height: 1;
+    overflow: hidden;
+}
+
+.ui-step li .ui-step-icon {
+    height: 50px;
+    position: absolute;
+    top: 0;
+    width: 150px;
+    text-align: center;
+    left: -25px;
+    font-family: tahoma;
+}.grid-780 .ui-step-icon .iconfont {
+    background-color: #F9F9F9;
+}
+.ui-step .ui-step-active .iconfont {
+    color: #ff7001;
+}
+.ui-step-icon .iconfont {
+    font-size: 30px;
+    margin: 0;
+    color: #b7b7b7;
+    color: rgba(0,0,0,.25);
+    *color: #b7b7b7;
+    line-height: 30px;
+    background: #fff;
+    padding: 0 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-shadow: 1px 1px 2px #fff, 0 0 0 #ccc, 1px 1px 2px #fff;
+}
+.iconfont {
+    font-family: "rei";
+    font-style: normal;
+    font-weight: normal;
+    cursor: default;
+    -webkit-font-smoothing: antialiased;
+}
+
+.ui-step {
+    padding: 0 40px;
+    margin: 0 auto;
+    font-size: 14px;
+    list-style: none;
+    zoom: 1;
+    position: relative;
+    color: #b7b7b7;
+    overflow: hidden;
+}
+
+.ui-step-icon .ui-step-text {
+    height: 20px;
+    line-height: 20px;
+    position: relative;
+    text-shadow: 0 1px 0 #fff;
+    top: 34px;
+    left: -50px;
+}
+
+@font-face {
+    font-family: "rei";
+    src: url("https://i.alipayobjects.com/common/fonts/rei.eot?20150616"); /* IE9 */
+    src: url("https://i.alipayobjects.com/common/fonts/rei.eot?20150616#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("https://i.alipayobjects.com/common/fonts/rei.woff?20150616") format("woff"), /* chrome 6+、firefox 3.6+、Safari5.1+、Opera 11+ */
+    url("https://i.alipayobjects.com/common/fonts/rei.ttf?20150616")  format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+ */
+    url("https://i.alipayobjects.com/common/fonts/rei.svg?20150616#rei") format("svg"); /* iOS 4.1- */
+}
+.iconfont {
+    font-family:"rei";
+    font-style: normal;
+    font-weight: normal;
+    cursor: default;
+    -webkit-font-smoothing: antialiased;
+}
+.ui-form .fn-pt14 {
+    padding-top: 14px;}
+
+/* 两个选框 */
+.tab-choose{
+    width:778px;
+    height:67px;
+    box-shadow: 0 0 3px #C7C5C5;
+}
+.tab-choose-item{
+    float:left;
+}
+.btn-personal,.tab-choose-item a,.tab-choose-item-personal .arrow,.ui-dropdown-trigger{
+    background-image:url("https://i.alipayobjects.com/e/201209/1DY4fMlnIi.png");
+    background-repeat:no-repeat;
+}
+.tab-choose-item a{
+    display:block;
+    height:68px;
+    text-indent:-9999em;
+}
+.tab-choose-item-personal{
+    position:relative;
+}
+.tab-choose-item-personal a{
+    background-position:0 0;
+    width:388px;
+}
+.tab-choose-item-personal .arrow{
+    display:block;
+    width:25px;
+    height:11px;
+    background-position: 0 -71px;
+    position:absolute;
+    top:67px;
+    left:47%;
+}
+.tab-choose-item-business a{
+    background-position:-386px 0;
+    width: 390px;
+}
+.box-shadow{
+    box-shadow: 0 0 5px #c7c5c5;
+    background:#fff;
+    border:1px solid #e7e7e7;
+    border-top: none;
+    width: 776px;
+}
+/* 表单重设 */
+.ui-form-general .ui-form-item{
+	/**padding-left:140px;**/
+}
+.ui-form-general{
+	padding-top:50px;
+}
+.ui-form-general .ui-label{
+	width:140px;
+	margin-left:-140px;
+}
+.login-form-cnt{
+    width:418px;
+    background:#fff;
+    padding: 15px 200px 0 160px;
+}
+.license{
+    margin-left:60px;
+    float: left;
+    vertical-align: middle;
+}
+.ime-disabled{
+    ime-mode: disabled;
+}
+.checkcode-img{
+    border: 1px solid #C1C1C1;
+    vertical-align: middle;
+    padding: 5px;
+}
+.ui-form-item {
+	position: relative;
+	zoom:1;
+}
+.ui-form-item .ui-input{
+    margin-right: 6px;
+}
+.ui-form-item-checkcode-error .ui-form-explain{
+    background-color:#fff;
+    border: none;
+    background-position: -59px -66px;
+    padding: 10px 8px 9px 25px;
+    position: absolute;
+    top:0;
+}
+.ui-form-item-checkcode-error .ui-form-explain .ui-form-arrow{
+    display: none;
+}
+.ui-form-item-checkcode-error .ui-input{
+      border: 1px solid #FF0000;
+}
+
+.reg-area{
+    /**text-align: right;del by lin.weng**/
+}
+.ui-form-l .ui-form-item-area{
+	padding-bottom:27px;
+	_padding-bottom:20px;
+}
+.ui-form-item-area .ui-label-area{
+	padding-top:8px;
+}
+.ui-form input::-webkit-input-placeholder { color:#999; }
+.ui-form input:-moz-placeholder { color:#999; }
+.ui-form-l .ui-input {
+    width: 252px;
+}
+.ui-form-item .ui-input-100 {
+    width: 100px;
+}
+.ui-form-item .ui-input-110 {
+    width: 110px;
+}
+
+/* 阿里账户 */
+.aliusers-list li{
+    float: left;
+    margin: 10px 8px 0 auto;
+    white-space: nowrap;
+}
+.ui-ali-icons{
+    background-image: url("https://i.alipayobjects.com/e/201208/3ocQFumQPT.png");
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+    vertical-align: text-top;
+    overflow:hidden;
+}
+.ui-ali-icons-1{
+    background-position: 0 -99px;
+}
+.ui-ali-icons-3, .ui-ali-icons-4{
+    background-position: 0 -40px;
+}
+.ui-ali-icons-15{
+    background-position: 0 -40px;
+}
+.ui-ali-icons-5{
+    background-position: 0 -80px;
+}
+.ui-ali-icons-0{
+    background-position: 0 0;
+}
+.ui-ali-icons-2{
+    background-position: 0 -60px;
+}
+/***select重新设置***/
+.ui-form-item-area .ui-littleselect-trigger{
+	border:1px solid #ccc;
+	height:28px;
+	line-height:28px;
+}
+/***select重新设置***/
+.ui-select-trigger {
+    width: auto !important;
+    min-width: 49px !important;
+    margin-right: 5px;
+}
+.ui-select .ui-select-content {
+    width: 320px;
+    height: 250px;
+    overflow: auto;
+    clear: both;
+    background: #fff;
+    zoom: 1;
+}
+.ui-select .ui-select-content:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0}
+.ui-select .ui-select-item {
+
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.ui-select .ui-select-item-top {
+	width: 90px;
+	padding: 5px 10px;
+	border-bottom: 1px dashed #dedede;
+}
+/***国家手机代码样式***/
+.ui-input.ui-input-countryCode {
+    background: #f2f2f2;
+    position: relative;
+}
+
+.ui-input.ui-input-countryCode:after {
+    font-family: 'rei';
+    content: '\F03C';
+    font-size: 15px;
+    position: absolute;
+    right: 8px;
+}
+
+
+.ui-form-item-mobile {
+    position: relative;
+}
+.mobile-code-trangle {
+    font-size: 15px;
+    position: absolute;
+    left: 183px;
+    top: 10px;
+}
+.ui-input.ui-input-countryCode:hover, .ui-form-item-hover .ui-input-countryCode, .ui-form-item-focus .ui-input-countryCode, .ui-form-item-error .ui-input-countryCode {
+    border-color: #c1c1c1;
+    -webkit-box-shadow: none !important;
+    box-shadow: none;
+}
+
+.switch-re-type {
+    margin-left: 140px;
+}
+
+#J-pop-accName {
+    _width: 197px !important;
+    max-width: 197px !important;
+}
+
+.ui-country-trigger {
+  width: auto !important;
+  min-width: 85px !important;
+  margin-right: 5px;
+}
+
+/***图片验证码xbox***/
+.ui-form-checkCode {
+    padding-top: 30px;
+}
+
+.ui-form-checkCode .ui-form-item {
+    padding-left: 75px;
+}
+
+.ui-form-checkCode .ui-form-submit {
+    padding-left: 150px;
+}
+
+.ui-form-checkCode .ui-input {
+    padding: 11px 10px;
+    font-size: 14px;
+    height: 18px;
+    line-height: 18px;
+    color: #4d4d4d;
+}
+
+.ui-form-checkCode .ui-form-explain-xbox {
+    color: red;
+}
+
+.ui-form-checkCode .ui-form-item-error .ui-form-explain-xbox:before {
+    content: '\F045';
+    font-family: rei;
+    padding-right: 5px;
+}
+
+/*countbutton样式reset*/
+
+.ui-button-nsdisable button{
+    padding: 9px;
+    font-weight: normal;
+    background-color: #f2f2f2;
+    color: gray;
+    cursor: default;
+    border: 1px solid #c1c1c1;
+}
+
+.ui-button-nswhite button {
+    padding: 9px;
+    font-weight: normal;
+    background-color: #f2f2f2;
+    color: black;
+    cursor: pointer;
+    border: 1px solid #c1c1c1;
+}
+.global-logo a {
+	width: 114px;
+	height: 40px;
+	background: transparent url(https://t.alipayobjects.com/images/T1HHFgXXVeXXXXXXXX.png) left top no-repeat;
+	margin-right: 15px;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi),
+only screen and (min-resolution: 2dppx) {
+	.global-logo a {
+		background-image: url(https://t.alipayobjects.com/images/T11rdgXbFkXXXXXXXX.png);
+		background-size: 114px 40px;
+	}
+}
+#footer{
+        background:#f4f4f4;
+        border-top: 2px solid #E9E9E9;
+    }
+	#footer h2{
+        margin: 25px 225px;
+    }
+    .copyright,.copyright a,.copyright a:hover{color:#808080;}
+

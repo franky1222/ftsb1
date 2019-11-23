@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<input type="hidden" value="{{ a }}" id="getRecord">-->
+<div id="insert"></div>
+</body>
+
+<!-- <input type="hidden" value="{{ var1 }}" id="filesname"/> -->
+
+<script src="{{ url_for('static', filename='lib/download.js') }}"></script>
+
+<script src="{{ url_for('static', filename='js/jquery-1.7.2.js') }}"></script>
+<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+<script>
+	<!-- var name = document.getElementById("filesname").value; -->
+	<!-- name = name.split(";"); -->
+	
+    $(document).ready(function () {
+        var datas=[];
+        // var student = new Object();
+        // student.name = "Peng Shuang";
+        // student.age = 23;
+        // student.location = "China";
+        // var data = JSON.stringify(student)
+        var data = {};
+        data["user"] = "wu";
+		data["record"] = "wu";
+		data["time"] = "wu";
+		///////////////////////////////////////////////////////////////
+		data["type"] = "wu"
+        //////////////////////////////////////////////
+		datas.push(data);
+		var jsonString = JSON.stringify(datas);
+    $.ajax({
+        url: "/blog/sendjson2",
+        type: "POST",
+        data: jsonString,
+        success: function (msg) {
+           // msg.forEach(function (item, index) {
+           //     var str='<div style="height:1000px;width:100%"><img src="'+'../static/photo/'+item.user+'/'+item.record+'.jpg"/></div>'
+           //      $("#insert").append(str)
+           // })
+            for(var i=msg.length-1;i>=0;i--)
+            {
+////////////////////////////////////////////////////////////////////////////////
+					var filesname = msg[i].name;
+					filesname = filesname.split(";") ;
+					//document.write(filesname[0]) ;
+                     if(msg[i].type==0)
+                     {
+						<!-- if (msg[i].num == 1) -->
+						<!-- { -->
+							<!-- var str='<div style="height:520px;width:1500px;"><div style="position:relative;top:0px;">尊敬的'+msg[i].user+'您添加该条历史纪录的时间为'+msg[i].time+'</div><img  style="height:500px;width:500px" src="../static/photo/'+msg[i].user+'/'+msg[i].record+'/'+filesname[0]+'"/></div><div style="height: 50px"></div>' ; -->
+							<!-- $("#insert").append(str) ; -->
+						<!-- } -->
+						<!-- else{ -->
+							var str = '<div style="width:1500px;"><div style="position:relative;top:0px;">尊敬的'+msg[i].user+'，您添加该条历史纪录的时间为'+msg[i].time+'</div>' ;
+							for (var j=0; j<msg[i].num; j++){
+								s = '<img  style="height:480px;width:480px;margin-right:20px;margin-bottom:20px;" src="../static/photo/'+msg[i].user+'/'+msg[i].record+'/' ;
+								str = str + s + filesname[j] + '"/>' ;
+							}
+							str = str + '<div style="height: 50px"></div>' ;
+							$("#insert").append(str) ;
+						<!-- } -->
+                         
+                     }
+                     else{
+                         //if(msg[i].type==1){
+
+                            <!-- var str='<div style="height:500px;width:500px">'+'尊敬的'+msg[i].user+'您添加该条PDF的时间为'+msg[i].time+'<img  style="height:500px;width:500px" src="'+'../static/photo/'+msg[i].user+'/pdf/'+msg[i].record+'/2__0000.jpg"/></div>' -->
+                             <!-- $("#insert").append(str) -->
+                             <!-- $("#insert").append('<a href="'+'../static/photo/'+msg[i].user+'/pdf/'+msg[i].record+'.zip" download="'+msg[i].record+'.zip">点击下载</a>') -->
+							 
+							 var str='<div style="height:520px;width:1500px;"><div style="position:relative;top:0px;">尊敬的'+msg[i].user+'您添加该条PDF的时间为'+msg[i].time+'</div><img  style="height:500px;width:500px" src="../static/photo/'+msg[i].user+'/pdf/'+msg[i].record+'/'+filesname[0].slice(0,-4)+'_0000.jpg"/></div><div style="height: 50px"></div>' ;
+							$("#insert").append(str) ;
+							$("#insert").append('<a href="'+'../static/photo/'+msg[i].user+'/pdf/'+msg[i].record+'.zip" download="'+filesname[0].slice(0,-4)+'.zip">点击下载</a>')
+                       // }
+                     }
+//////////////////////////////////////////////////////////////
+
+            }
+
+        }
+    });
+    });
+
+  </script>
+
+</html>
